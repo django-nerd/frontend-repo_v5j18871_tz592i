@@ -1,28 +1,23 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Features from './components/Features';
+import CTA from './components/CTA';
+import ScrollSatellite from './components/ScrollSatellite';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
+    <div className="min-h-screen bg-slate-950 text-white antialiased">
+      <div className="pointer-events-none fixed inset-0 -z-0 bg-[radial-gradient(ellipse_at_top_left,rgba(124,58,237,0.15),transparent_60%)]" />
+      <Navbar />
+      <Hero />
+      <Features />
+      <CTA />
+      <ScrollSatellite />
+      <footer id="community" className="relative border-t border-white/10 py-10 text-center text-white/60">
+        <p>
+          © {new Date().getFullYear()} Discovery Atlas — built for explorers.
         </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+      </footer>
     </div>
-  )
+  );
 }
-
-export default App
